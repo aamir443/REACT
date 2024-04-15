@@ -1,16 +1,14 @@
 
-// import './App.css'
-import Message from './component/Message'
-import Languages from './component/Languages'
+
+import Counter from "./component/Counter"
 
 
 function App() {
 
   return (
     <>
-      <Message/>
-      <Languages/>
 
+ <Counter/>
     </>
   )
 }

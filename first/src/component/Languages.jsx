@@ -1,16 +1,22 @@
 // import React from 'react'
 
  const Languages=() => {
-    let lang = ["java","javascript","kotlin","python","c"];
+    let lang = [
+      { id: 1, name:"java"},
+      { id: 1, name:"javascript"},
+      { id: 1, name:"kotlin"},
+      { id: 1, name:"python"},
+      { id: 1, name:"c"},
+    ];
   return (
 
    
     <div>
-    <h1>Programming languages</h1>
+    <h1 className="bg-warning">Programming languages</h1>
     <ul>
     {
-        lang.map((item,index)=>(
-        <li key={index}>{item}</li>
+        lang.map((item)=>(
+        <li key={item.id}>{item.name}</li>
     ))}
         </ul>
     </div>
