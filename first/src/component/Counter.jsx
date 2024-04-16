@@ -1,50 +1,20 @@
-import  { useEffect, useState } from 'react'
 
-const Counter = () => {
-    const [count , setCount]= useState(0);
-    const checkValue=()=>{
-        return count===0? "Zero":count;
+const Counter = (props) => {
+    const { counter, decrement, increment, deleteCounter } = props;
+    const checkValue = () => {
+        return counter.count === 0 ? "Zero" : counter.count;
     }
-
-    const checkCounter=()=>{
-        return count===0? " badge bg-warning m-3 p-3":" badge bg-danger m-3 p-3"
+    const checkCounter = () => {
+        return counter.count === 0 ? "badge bg-danger m-3 rounded text-white p-3" : "badge bg-warning m-3 p-3 text-dark rounded";
     }
-   
-
-    const countIncreament=()=>{
-         setCount(count+1);
-        
-    }
-    const countDecreament=()=>{
-       setCount(count -1);
-       
-        
-    }
-    const resetCount = () => {
-        setCount(0);}
-
-    useEffect(()=>
-    {
-        console.log(count)
-    },
-    [count])
-
-
-  return (
-    <div className='container mt-3'>
-        <button className='btn btn-primary'onClick={countIncreament}>Increament</button> 
-        {/* In event calling we pass an address to run the code
-        In function we call a function() just like this */}
-
-        <span className={checkCounter()}>{checkValue()}</span>
-
-        <button className='btn btn-warning 'onClick={countDecreament}>Decrament</button>
-        <button className='btn btn-danger 'onClick={resetCount}>Restart</button>
+    return (
+        <div className='container mt-3'>
+            <button className='btn btn-primary' onClick={() => decrement(counter)}>Decrement</button>
+            <span className={checkCounter()}>{checkValue()}</span>
+            <button className='btn btn-primary' onClick={() => increment(counter)}>Increment</button>
+            <button className='btn btn-danger mx-3' onClick={() => deleteCounter(counter)}>Delete</button>
         </div>
-  )
+    )
 }
 
-export default Counter
-
-
-
+export default Counter;
