@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Card from "./Card";
-import Navbar from "./Navbar";
+import  { useEffect, useState } from "react";
+import Card from "../assets/Card";
+
 
 const MyCard = () => {
   const [products, setProducts] = useState([]);
@@ -15,7 +15,6 @@ useEffect(() => {
   return( 
     <>
     <div>
-    <Navbar/>
     </div>
     
     
